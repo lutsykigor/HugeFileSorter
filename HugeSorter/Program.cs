@@ -29,7 +29,7 @@
                 209715200, allowedChars.ToCharArray(),
                 LineIndexFunc);
 
-            sorter.Sort("c:\\Users\\pro\\documents\\1\\test.txt", "c:\\Users\\pro\\documents\\1\\testSorted.txt");
+            sorter.Sort("<insert-path-to-source-file-here>", "<insert-path-to-destination-here>");
 
             var end = DateTime.Now - start;
 
