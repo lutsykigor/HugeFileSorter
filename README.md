@@ -35,7 +35,7 @@ But in general this algorithm sorts really fast. Also it is capable to sort the 
 You can use this console tool - https://github.com/lutsykigor/TextFileGenerator, to generate sample text file for sort purposes.
 
 Possible improvements:
-- use parallel chunks merge, should increate performance
-- determine text file encoding to predefine charset
-- implement possibility to distribute sort over few nodes (shouldn't be a problem)
+- use parallel chunks merge, should increate the performance
+- determine a text file encoding to predefine the charset
+- implement possibility to distribute the sort over a cluster of nodes (shouldn't be a problem)
 - implement some UI
