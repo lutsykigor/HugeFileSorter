@@ -19,10 +19,8 @@
 
             Func<string, int> LineIndexFunc = line => line.IndexOf('.') + 1;
 
-            // passed chunk size is good for files up to 7.2GB
-            // with current alphanumeric set we will have 36 chunks up to 200MB of data,
-            // of course it is estimation, and real lines distribution varies, so there may be more chunks
-            // you need to change chunk size for different source file sizes
+            // passed chunk size is good for files of big sizes, from 1GB
+            // you need to change chunk size for small source file sizes for better performance
             var sorter = new FileSorter(
                 new FileAccess(),
                 new LinesComparer(StringComparer.OrdinalIgnoreCase, LineIndexFunc),
