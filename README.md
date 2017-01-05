@@ -20,15 +20,15 @@ Let's check an example. Imagine a situation where you have this source unsorted 
 
 Let's assume that this text file uses only english characters in its charset (we do not care about a case sensivity, as we ignore the case during the sort, we may change it if we like). So this algorithm will create 26 chunks, for each letter. In case when file size is huge, this algorithm will decide to create (26 pow N) poassible chunks to limit max chunk length by configuration settings.
 
-Each time when we decide what chunk corresponds to particular text line, we are using hash table for chunks with chunk name as a key, and we select only few characters from line to get final chunk destination.
+Each time when we decide that the chunk corresponds to a particular text line, we are using a hash table for chunks with chunk name as a key, and we select only the few characters from line to get final chunk destination.
 
 When application finishes moving lines to chunks we will have 5 chunks for (a, b, k, t, r), then we read chunks one by one, sort them in memory, and write to destination file.
 
-But in real life text lines distribution is not equal, so we may come to situation when there are many lines starting with 'a' character, so when this happens algorithm will split chunk in to a lower pieces, and from this point, every time we get new line, we will make N+1 chunk lookups in the hash table, which impacts performance, but not significantly. This algorithm is doing its best, to omit this case, and pre create enough chunks, but not too much.
+But in real life text lines distribution is not equal, so we may come to situation when there are many lines starting with 'a' character, so when this happens algorithm will split chunk in to a lower pieces, and from this point, every time we get the new line, we will make N+1 chunk lookups in the hash table, which impacts performance, but not significantly. This algorithm is doing its best, to omit this case, and pre create enough chunks, but not too much.
 
 So, I see two negative points:
 - you need to predefine charset before sort
-- when lines distribution is far from equal then sorting becomes slightly slower
+- when lines distribution is far from equal then sort becomes slightly slower
 
 But in general this algorithm performance is really fast. Also it is capable to sort the huge files, as it does not keep any data in memory, except pathes to chunk files and small buffers for each chunk.
 
