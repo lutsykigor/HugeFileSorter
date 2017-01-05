@@ -18,7 +18,7 @@ Let's check an example. Imagine a situation where you have this source unsorted 
 8. tango
 9. kilo
 
-Let's assume that this text file uses only english characters in its charset (we do not care about case sensivity, as we ignore case during sort, we may change it if we like). So this algorithm will create 26 chunks, for each letter. In case when file size is huge, this algorithm will decide to create (26 pow N) to limit max chunk length by configuration settings.
+Let's assume that this text file uses only english characters in its charset (we do not care about a case sensivity, as we ignore the case during the sort, we may change it if we like). So this algorithm will create 26 chunks, for each letter. In case when file size is huge, this algorithm will decide to create (26 pow N) to limit max chunk length by configuration settings.
 
 Each time when we decide what chunk corresponds to particular text line, we are using hash table for chunks with chunk name as a key, and we select only few characters from line to get final chunk destination.
 
