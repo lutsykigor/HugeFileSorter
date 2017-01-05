@@ -31,3 +31,5 @@ So, I see two negative points:
 - when lines distribution is far from equal then sorting becomes slightly slower
 
 But in general this algorithm sorts really fast. Also it is capable to sort the huge files, as it does not keep any data in memory, except pathes to chunk files and small buffers for each chunks.
+
+You can use this console tool - https://github.com/lutsykigor/TextFileGenerator, to generate sample text file for sort purposes.
