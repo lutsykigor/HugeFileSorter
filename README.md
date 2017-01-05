@@ -24,13 +24,13 @@ Each time when we decide what chunk corresponds to particular text line, we are 
 
 When application finishes moving lines to chunks we will have 5 chunks for (a, b, k, t, r), then we read chunks one by one, sort them in memory, and write to destination file.
 
-But in real life text lines distribution is not equal, so we may come to situation when there are many lines starting with 'a' character, so when this happens algorithm will split chunk in lower pieces, and from this point, every time we get new line, we will make N+1 chunk lookups in the hash table, which impacts performance, but not significantly. This algorithm is doing its best, to omit this case, and pre create anough chunks, but not too much.
+But in real life text lines distribution is not equal, so we may come to situation when there are many lines starting with 'a' character, so when this happens algorithm will split chunk in to a lower pieces, and from this point, every time we get new line, we will make N+1 chunk lookups in the hash table, which impacts performance, but not significantly. This algorithm is doing its best, to omit this case, and pre create enough chunks, but not too much.
 
 So, I see two negative points:
 - you need to predefine charset before sort
 - when lines distribution is far from equal then sorting becomes slightly slower
 
-But in general this algorithm sorts really fast. Also it is capable to sort the huge files, as it does not keep any data in memory, except pathes to chunk files and small buffers for each chunks.
+But in general this algorithm performance is really fast. Also it is capable to sort the huge files, as it does not keep any data in memory, except pathes to chunk files and small buffers for each chunk.
 
 You can use this console tool - https://github.com/lutsykigor/TextFileGenerator, to generate sample text file for sort purposes.
 
