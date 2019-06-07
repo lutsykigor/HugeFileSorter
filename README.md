@@ -1,4 +1,4 @@
-# Experimental Efficient .NET Text Files Sorter
+# Efficient .NET Text Files Bucket Sorter
 If you need to sort large text files, there are not so many options to explore. Most popular and efficient approach is External Merge Sort algorithm. There are number of implementations available on web, some exist in .Net as well. This sorter uses custom, plain simple algorithm which beats External Merge Sort in most cases, and most common cases, at least in my tests.
 
 For comparison I have created this https://github.com/lutsykigor/ExternalMergeSort project, it is a state of the art implementation of the External Merge Sort algorithm with use of priority queues and external K-way merge. It is not my implementation, for details please check this https://blogs.msdn.microsoft.com/dhuba/2010/08/24/external-merge-sort/
